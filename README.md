@@ -1,13 +1,21 @@
-# handlePut
-Document the data and program flow for your API, including the mapping of Routes and Functions, as well as the flow of data.
+# HandlePUT
 
-## What is the root URL to your API?
-'/customer/
+## Route: 
+/customers/{id}
 
-## What are the routes?
+## Input: 
+JSON body containing the updated data and ID (##) of the record to be updated.
 
-## What inputs do they require?
-JSON body, ID (##)
+## Output: 
+Object representing the updated record.
 
-## What output do they return?
-Object (updated record)	
+## Function Mapping:
+Lambda Function: 
+[handlePut](https://us-west-1.console.aws.amazon.com/lambda/home?region=us-west-1#/functions/handlePut?tab=code)
+
+## Data Flow:
+1. Client sends a PUT request with JSON body to {root_url}/people/{id}.
+2. Amazon API Gateway triggers the handlePut Lambda function.
+3. Lambda function updates the record with the specified ID in the database.
+4. Lambda function returns the updated record as the response.
+5. Amazon API Gateway sends the response back to the client.
